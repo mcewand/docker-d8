@@ -1,0 +1,31 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: 12345
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./config_files/mysql:/docker-entrypoint-initdb.d
+  drupal:
+    image: drupal:8.5-apache
+    ports:
+      - 8080:80
+    volumes:
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
+      - ./modules:/var/www/html/modules/custom
+      - ./config_files/settings.php:/var/www/html/sites/default/settings.php
+    restart: always
+    environment:
+      DB_DATABASE: drupal
+      DB_USER: root
+      DB_HOST: mysql
+      DB_PASSWORD: 12345
+      DB_PORT: 3306
+
