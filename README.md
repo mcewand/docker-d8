@@ -5,6 +5,7 @@ Install Docker.
 * Mac: https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 Add any test modules to the 'modules' directory in the repo.
+Add any themes to the 'themes' directory in this repo.
 
 From the root of this directory, do
 ```
