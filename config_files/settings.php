@@ -8,7 +8,6 @@ $settings['hash_salt'] = 'dKPadu0eGrl8Vaun7PTWMShsdh7l1uCpdQvCK-ibpFuBoXKP0VX8b8
 $settings['update_free_access'] = FALSE;
 
 $config['system.site']['name'] = 'Test Site';
-$config['system.theme']['default'] = 'bartik';
 
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
@@ -28,4 +27,3 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config_XG14BEPJRHNoBIfreZ8Ror2q_6XexURPG0IgD37NWdsp6W5H8RfxEheQEu1i-E2w9iI4Hj2lOA/sync';
