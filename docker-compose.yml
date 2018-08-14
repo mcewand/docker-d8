@@ -20,6 +20,7 @@ services:
       - /var/www/html/themes
       - /var/www/html/sites
       - ./modules:/var/www/html/modules/custom
+      - ./themes:/var/www/html/themes/custom
       - ./config_files/settings.php:/var/www/html/sites/default/settings.php
     restart: always
     environment:

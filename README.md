@@ -1,6 +1,8 @@
 # Generic Drupal 8 Site
 
 ## Usage
+Install Docker.
+* Mac: https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 Add any test modules to the 'modules' directory in the repo.
 
