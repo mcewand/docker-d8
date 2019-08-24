@@ -10,8 +10,9 @@ services:
       - "3306:3306"
     volumes:
       - ./config_files/mysql:/docker-entrypoint-initdb.d
-  drupal:
-    image: drupal:8.5-apache
+  app:
+    image: drupal:8.7-apache
+    container_name: drupal.app
     ports:
       - 8080:80
     volumes:
@@ -21,6 +22,7 @@ services:
       - /var/www/html/sites
       - ./modules:/var/www/html/modules/custom
       - ./themes:/var/www/html/themes/custom
+      - ./sync:/var/www/html/sites/default/sync
       - ./config_files/settings.php:/var/www/html/sites/default/settings.php
     restart: always
     environment:
@@ -29,4 +31,8 @@ services:
       DB_HOST: mysql
       DB_PASSWORD: 12345
       DB_PORT: 3306
-
+  drush:
+    image: drush/drush:8
+    container_name: drupal.drush
+    volumes_from:
+      - app

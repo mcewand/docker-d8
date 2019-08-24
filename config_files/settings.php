@@ -3,6 +3,7 @@
 $databases = array();
 
 $config_directories = array();
+$config_directories['sync'] = 'sites/default/sync';
 
 $settings['hash_salt'] = 'dKPadu0eGrl8Vaun7PTWMShsdh7l1uCpdQvCK-ibpFuBoXKP0VX8b82yQx49XsyBWrEIAniaqw';
 $settings['update_free_access'] = FALSE;
@@ -27,3 +28,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
+
+$settings['file_public_path'] = 'sites/default/files';
+
+
